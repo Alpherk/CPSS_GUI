@@ -1,42 +1,62 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+const router = useRouter()  
+
 const dialogDialogVisible = ref(false)
 
-const clickFunction = () => {
-    dialogDialogVisible.value = true
+const clickDisteval = () => {
+    router.push('/disteval') 
 }
+
+const clickPrompt = () => {
+    router.push('/prompt')
+}
+
+const clickUpload = () => {
+    router.push('/evaldataupload')
+}
+
+const clickRelease = () => {
+    router.push('/evaluationlistrelease')
+}
+
+const clickReport = () => {
+    router.push('/evaluationreport')
+}
+
 </script>
 
 <template>
 
     <el-container>
 
-        <el-card @click="clickFunction">
+        <el-card @click="clickDisteval">
             <el-icon size="50px"><i-ep-Histogram /></el-icon>
             <div>分布式评测</div>
         </el-card>
 
-        <el-card @click="clickFunction">
+        <el-card @click="clickPrompt">
             <el-icon size="50px"><i-ep-InfoFilled /></el-icon>
             <div>提示词工程</div>
         </el-card>
 
-        <el-card @click="clickFunction">
+        <el-card @click="clickUpload">
             <el-icon size="50px"><i-ep-Promotion /></el-icon>
             <div>评测数据库上报</div>
         </el-card>
 
-        <el-card @click="clickFunction">
+        <el-card @click="clickRelease">
             <el-icon size="50px"><i-ep-StarFilled /></el-icon>
             <div>评测榜单发布</div>
         </el-card>
 
-        <el-card @click="clickFunction">
+        <el-card @click="clickReport">
             <el-icon size="50px"><i-ep-Stamp /></el-icon>
             <div>评测报告生成</div>
         </el-card>
 
-        <el-card @click="clickFunction">
+        <el-card @click="">
             <el-icon size="50px"><i-ep-Menu /></el-icon>
             <div>更多</div>
         </el-card>
